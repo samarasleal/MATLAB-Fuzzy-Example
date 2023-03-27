@@ -1,0 +1,52 @@
+[System]
+Name='controladorfuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=8
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Errro'
+Range=[-2 2]
+NumMFs=5
+MF1='NG':'trimf',[-3 -2 -1]
+MF2='NP':'trimf',[-1.99 -1 0]
+MF3='Z':'trimf',[-1 0 1]
+MF4='PP':'trimf',[0 1 2]
+MF5='PG':'trimf',[0.873015873015873 2 3]
+
+[Input2]
+Name='DerivadaErro'
+Range=[-2 2]
+NumMFs=5
+MF1='NG':'trimf',[-3 -2 -1]
+MF2='NP':'trimf',[-2 -1 0]
+MF3='Z':'trimf',[-1 0 1]
+MF4='PP':'trimf',[0 1 2]
+MF5='PG':'trimf',[0.873015873015873 2 3]
+
+[Output1]
+Name='Força'
+Range=[-3 3]
+NumMFs=5
+MF1='NG':'trimf',[-3 -3 -1.30952380952381]
+MF2='NP':'trimf',[-3 -1.5 0]
+MF3='Z':'trimf',[-1.5 0 1.5]
+MF4='PP':'trimf',[0 1.5 3]
+MF5='PG':'trimf',[1.2936507936508 3 3]
+
+[Rules]
+5 3, 5 (1) : 1
+3 2, 4 (1) : 1
+2 3, 2 (1) : 1
+3 4, 4 (1) : 1
+5 4, 2 (1) : 1
+5 5, 1 (1) : 1
+3 1, 5 (1) : 1
+2 3, 2 (1) : 1
